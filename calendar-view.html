@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template DHQ</title>
+    <!-- Bootstrap CSS Start -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS End -->
+
+    <!-- Fontawesome Start -->
+    <link
+      href="node_modules/@fortawesome/fontawesome-free/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="node_modules/@fortawesome/fontawesome-free/css/brands.css"
+      rel="stylesheet"
+    />
+    <link
+      href="node_modules/@fortawesome/fontawesome-free/css/solid.css"
+      rel="stylesheet"
+    />
+    <!-- Fontawesome End -->
+
+    <!-- Select2 Start -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <!-- Select2 End -->
+
+    <!-- Custom CSS Start -->
+    <link href="style.css" rel="stylesheet" />
+    <!-- Custom CSS End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <section class="bg-gradiant bg-app">
+      <div class="box-section bg-light mx-auto">
+        <div
+          class="expand-icon-sidebar d-block d-sm-block d-md-block d-lg-none"
+        >
+          <i class="fa-solid fa-angles-right"></i>
+        </div>
+        <div class="header">
+          <div class="row">
+            <div class="col-12 col-md-3">
+              <h1 class="mb-0 title">CoE</h1>
+              <p class="mb-0 sub-title">Calendar of Event</p>
+            </div>
+            <div
+              class="col-12 col-md-9 d-flex gap-3 align-items-center header-tools"
+            >
+              <div class="search-bar">
+                <div class="input-group border rounded-pill">
+                  <input
+                    type="search"
+                    placeholder="What're you searching for?"
+                    aria-describedby="button-addon3"
+                    class="form-control bg-transparent border-0 search-bar-input"
+                  />
+                  <div class="input-group-append border-0">
+                    <button
+                      id="button-addon3"
+                      type="button"
+                      class="btn btn-link text-success"
+                    >
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="switch-mode">
+                <div class="tgl-group">
+                  <input
+                    class="tgl tgl-light"
+                    id="display-address"
+                    type="checkbox"
+                    checked="true"
+                  />
+                  <label class="tgl-btn" for="display-address"></label>
+                  <p class="mb-0 calendar-label" style="font-weight: 400">
+                    Calendar Mode
+                  </p>
+                </div>
+              </div>
+              <div class="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="count-cart">10</span>
+              </div>
+              <div class="profile dropdown">
+                <div
+                  id="dLabel"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                  <li><a class="dropdown-item" href="#">My Profile</a></li>
+                  <li><a class="dropdown-item" href="#">My Events</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <main class="mt-3">
+          <div class="row">
+            <div class="d-none d-sm-none d-md-none d-lg-block col-12 col-lg-3">
+              <div class="p-3 shadow-sm mb-4" style="border-radius: 20px">
+                <div
+                  id="location-filter"
+                  class="d-flex justify-content-between"
+                  data-bs-toggle="collapse"
+                  href="#location"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="location"
+                >
+                  <p class="mb-0" style="font-weight: 500">Location</p>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="collapse multi-collapse mt-2" id="location">
+                  <div>
+                    <select
+                      class="location-select"
+                      name="states[]"
+                      multiple="multiple"
+                    >
+                      <option value="Nanggroe Aceh Darussalam">
+                        Nanggroe Aceh Darussalam
+                      </option>
+                      <option value="Sumatera Utara">Sumatera Utara</option>
+                      <option value="Sumatera Selatan">Sumatera Selatan</option>
+                      <option value="Sumatera Barat">Sumatera Barat</option>
+                      <option value="Bengkulu">Bengkulu</option>
+                      <option value="Riau">Riau</option>
+                      <option value="Kepulauan Riau">Kepulauan Riau</option>
+                      <option value="Jambi">Jambi</option>
+                      <option value="Lampung">Lampung</option>
+                      <option value="Bangka Belitung">Bangka Belitung</option>
+                      <option value="Kalimantan Barat">Kalimantan Barat</option>
+                      <option value="Kalimantan Selatan">
+                        Kalimantan Selatan
+                      </option>
+                      <option value="Kalimantan Timur">Kalimantan Timur</option>
+                      <option value="Kalimantan Utara">Kalimantan Utara</option>
+                      <option value="Kalimantan Tengah">
+                        Kalimantan Tengah
+                      </option>
+                      <option value="Banten">Banten</option>
+                      <option value="DKI Jakarta">DKI Jakarta</option>
+                      <option value="Jawa Barat">Jawa Barat</option>
+                      <option value="Daerah Istimewa Yogyakarta">
+                        Daerah Istimewa Yogyakarta
+                      </option>
+                      <option value="Jawa Timur">Jawa Timur</option>
+                      <option value="Jawa Tengah">Jawa Tengah</option>
+                      <option value="Bali">Bali</option>
+                      <option value="Nusa Tenggara Barat">
+                        Nusa Tenggara Barat
+                      </option>
+                      <option value="Nusa Tenggara Timur">
+                        Nusa Tenggara Timur
+                      </option>
+                      <option value="Gorontalo">Gorontalo</option>
+                      <option value="Sulawesi Utara">Sulawesi Utara</option>
+                      <option value="Sulawesi Barat">Sulawesi Barat</option>
+                      <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                      <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                      <option value="Sulawesi Tenggara">
+                        Sulawesi Tenggara
+                      </option>
+                      <option value="Maluku">Maluku</option>
+                      <option value="Maluku Utara">Maluku Utara</option>
+                      <option value="Papua">Papua</option>
+                      <option value="Papua Barat">Papua Barat</option>
+                      <option value="Papua Tengah">Papua Tengah</option>
+                      <option value="Papua Pegunungan">Papua Pegunungan</option>
+                      <option value="Papua Selatan">Papua Selatan</option>
+                      <option value="Papua Barat Daya">Papua Barat Daya</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 shadow-sm mb-4" style="border-radius: 20px">
+                <div
+                  id="gender-filter"
+                  class="d-flex justify-content-between"
+                  data-bs-toggle="collapse"
+                  href="#gender"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="gender"
+                >
+                  <p class="mb-0" style="font-weight: 500">
+                    Target Audience (Gender)
+                  </p>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="collapse multi-collapse mt-2" id="gender">
+                  <div>
+                    <ul class="ks-cboxtags">
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="gender"
+                          id="Male"
+                          value="Male"
+                        /><label for="Male">Male</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="gender"
+                          id="Female"
+                          value="Female"
+                        /><label for="Female">Female</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="gender"
+                          id="MaleFemale"
+                          value="Male & Female"
+                        /><label for="MaleFemale">Male & Female</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 shadow-sm mb-4" style="border-radius: 20px">
+                <div
+                  id="age-filter"
+                  class="d-flex justify-content-between"
+                  data-bs-toggle="collapse"
+                  href="#age"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="age"
+                >
+                  <p class="mb-0" style="font-weight: 500">
+                    Target Audience (Age)
+                  </p>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="collapse multi-collapse mt-2" id="age">
+                  <div>
+                    <ul class="ks-cboxtags">
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="age"
+                          id="5-9"
+                          value="5-9 Year"
+                        /><label for="5-9">5-9 Year</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="age"
+                          id="10-19"
+                          value="10-19 Year"
+                        /><label for="10-19">10-19 Year</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="age"
+                          id="20-29"
+                          value="20-29 Year"
+                        /><label for="20-29">20-29 Year</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="age"
+                          id="30-39"
+                          value="30-39 Year"
+                        /><label for="30-39">30-39 Year</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="age"
+                          id="40+"
+                          value="40+ Year"
+                        /><label for="40+">40+ Year</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 shadow-sm mb-4" style="border-radius: 20px">
+                <div
+                  id="interest-filter"
+                  class="d-flex justify-content-between"
+                  data-bs-toggle="collapse"
+                  href="#interest"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="interest"
+                >
+                  <p class="mb-0" style="font-weight: 500">Interest</p>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="collapse multi-collapse mt-2" id="interest">
+                  <div>
+                    <ul class="ks-cboxtags">
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="Automotive"
+                          value="Automotive"
+                        /><label for="Automotive">Automotive</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="Entertainment"
+                          value="Entertainment"
+                        /><label for="Entertainment">Entertainment</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="Sport"
+                          value="Sport"
+                        /><label for="Sport">Sport</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="Adventure"
+                          value="Advanture"
+                        /><label for="Adventure">Advanture</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="Education"
+                          value="Education"
+                        /><label for="Education">Education</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="Lifestyle"
+                          value="Lifestyle"
+                        /><label for="Lifestyle">Lifestyle</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="FloraFauna"
+                          value="Flora & Fauna"
+                        /><label for="FloraFauna">Flora & Fauna</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="ArtCulture"
+                          value="Art & Culture"
+                        /><label for="ArtCulture">Art & Culture</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="FoodTravel"
+                          value="Food & Travel"
+                        /><label for="FoodTravel">Food & Travel</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="Social"
+                          value="Social"
+                        /><label for="Social">Social</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          id="BusinessSMEs"
+                          value="Business & SMEs"
+                        /><label for="BusinessSMEs">Business & SMEs</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-9">
+              <div class="d-flex justify-content-between mb-3">
+                <h3 class="mb-0">All Events</h3>
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Event Category
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Small Event (Less than 100 visitor)</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Medium Event (Less than 1000 visitor)</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Big Event (More than 1000 visitor)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="calendar"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- Full Calendar JS Start -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap5@6.1.10/index.global.js"></script>
+    <!-- Full Calendar JS End -->
+
+    <!-- Bootstrap Start -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.js"></script>
+    <!-- Bootstrap End -->
+
+    <!-- Select2 Start -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".location-select").select2();
+      });
+
+      // Location Filter
+      var locations = [];
+      $(".location-select").on("select2:select select2:unselect", function (e) {
+        //this returns all the selected item
+        var items = $(this).val();
+        //Gets the last selected item
+        var lastSelectedLocation = e.params.data.id;
+        locations.includes(lastSelectedLocation)
+          ? locations.push()
+          : locations.push(lastSelectedLocation);
+        console.log("Selected Locations: ", locations);
+      });
+    </script>
+    <!-- Select2 End -->
+
+    <!-- Gender Filter Start -->
+    <script>
+      var gender = [];
+
+      $("input:checkbox[name=gender]").change(function () {
+        interests = $("input:checkbox[name=gender]:checked")
+          .map(function () {
+            return $(this).val();
+          })
+          .get();
+
+        console.log("Selected Gender: ", interests);
+      });
+    </script>
+    <!-- Age Gender End -->
+
+    <!-- Age Filter Start -->
+    <script>
+      var age = [];
+
+      $("input:checkbox[name=age]").change(function () {
+        interests = $("input:checkbox[name=age]:checked")
+          .map(function () {
+            return $(this).val();
+          })
+          .get();
+
+        console.log("Selected Age: ", interests);
+      });
+    </script>
+    <!-- Age Filter End -->
+
+    <!-- Interest Filter Start -->
+    <script>
+      var interests = [];
+
+      $("input:checkbox[name=interest]").change(function () {
+        interests = $("input:checkbox[name=interest]:checked")
+          .map(function () {
+            return $(this).val();
+          })
+          .get();
+
+        console.log("Selected Interest: ", interests);
+      });
+    </script>
+    <!-- Interest Filter End -->
+
+    <!-- Fullcalendar Start -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+          themeSystem: "bootstrap5",
+          headerToolbar: {
+            left: "prev,next today title",
+            right: "dayGridMonth,listMonth",
+          },
+          dayMaxEvents: true, // allow "more" link when too many events
+          events: [
+            {
+              title: "Meeting with Client 1",
+              start: "2024-01-15T10:00:00",
+              end: "2024-01-15T12:00:00",
+              color: "#3788d8",
+            },
+            {
+              title: "Meeting with Client 2",
+              start: "2024-01-15T13:00:00",
+              end: "2024-01-15T14:00:00",
+              color: "#ff6347",
+            },
+            {
+              title: "Meeting with Client 3",
+              start: "2024-01-15T15:00:00",
+              end: "2024-01-15T16:00:00",
+              color: "#4682b4",
+            },
+            {
+              title: "Meeting with Client 4",
+              start: "2024-01-15T17:00:00",
+              end: "2024-01-15T18:00:00",
+              color: "#8a2be2",
+            },
+            {
+              title: "Meeting with Client 5",
+              start: "2024-01-15T19:00:00",
+              end: "2024-01-15T20:00:00",
+              color: "#20b2aa",
+            },
+            {
+              title: "Meeting with Client 6",
+              start: "2024-01-15T21:00:00",
+              end: "2024-01-15T22:00:00",
+              color: "#ffa500",
+            },
+            {
+              title: "Meeting with Client 7",
+              start: "2024-01-15T23:00:00",
+              end: "2024-01-15T24:00:00",
+              color: "#9370db",
+            },
+            {
+              title: "Lunch Break",
+              start: "2024-01-16T12:30:00",
+              end: "2024-01-16T13:30:00",
+              color: "#7bd148",
+            },
+            {
+              title: "Team Brainstorming",
+              start: "2024-01-18T09:00:00",
+              end: "2024-01-18T11:00:00",
+              color: "#f83a22",
+            },
+            {
+              title: "Product Presentation",
+              start: "2024-01-20T14:00:00",
+              end: "2024-01-20T16:00:00",
+              color: "#f3b343",
+            },
+            {
+              title: "Conference",
+              start: "2024-01-25",
+              end: "2024-01-28",
+              color: "#a4bdfc",
+            },
+            {
+              title: "Team Meeting",
+              start: "2024-02-01T09:00:00",
+              end: "2024-02-01T10:30:00",
+              color: "#3788d8",
+            },
+            {
+              title: "Training Session",
+              start: "2024-02-02T13:00:00",
+              end: "2024-02-02T15:00:00",
+              color: "#7bd148",
+            },
+            {
+              title: "Project Deadline",
+              start: "2024-02-05T12:00:00",
+              end: "2024-02-05T17:00:00",
+              color: "#f83a22",
+            },
+            {
+              title: "Marketing Conference",
+              start: "2024-02-08T10:00:00",
+              end: "2024-02-08T16:00:00",
+              color: "#f3b343",
+            },
+            {
+              title: "Product Launch",
+              start: "2024-02-10T15:00:00",
+              end: "2024-02-10T18:00:00",
+              color: "#a4bdfc",
+            },
+            {
+              title: "Client Presentation",
+              start: "2024-02-12T11:00:00",
+              end: "2024-02-12T13:30:00",
+              color: "#3788d8",
+            },
+            {
+              title: "Company Retreat",
+              start: "2024-02-15",
+              end: "2024-02-18",
+              color: "#7bd148",
+            },
+            {
+              title: "Development Meeting",
+              start: "2024-02-20T09:30:00",
+              end: "2024-02-20T11:30:00",
+              color: "#f83a22",
+            },
+            {
+              title: "Interviews",
+              start: "2024-02-22T13:00:00",
+              end: "2024-02-22T16:00:00",
+              color: "#f3b343",
+            },
+            {
+              title: "Team Building",
+              start: "2024-02-25T14:00:00",
+              end: "2024-02-25T17:00:00",
+              color: "#a4bdfc",
+            },
+            {
+              title: "Client Visit",
+              start: "2024-02-27T10:00:00",
+              end: "2024-02-27T12:00:00",
+              color: "#3788d8",
+            },
+            {
+              title: "Training Workshop",
+              start: "2024-02-28T09:00:00",
+              end: "2024-02-28T15:00:00",
+              color: "#7bd148",
+            },
+            {
+              title: "Coding Bootcamp",
+              start: "2024-02-03T10:00:00",
+              end: "2024-02-03T16:00:00",
+              color: "#f83a22",
+            },
+            {
+              title: "Strategic Planning",
+              start: "2024-02-06T09:00:00",
+              end: "2024-02-06T12:00:00",
+              color: "#f3b343",
+            },
+            {
+              title: "Product Testing",
+              start: "2024-02-09T14:00:00",
+              end: "2024-02-09T17:00:00",
+              color: "#a4bdfc",
+            },
+            {
+              title: "Sales Pitch",
+              start: "2024-02-13T11:30:00",
+              end: "2024-02-13T13:00:00",
+              color: "#3788d8",
+            },
+            {
+              title: "Marketing Campaign",
+              start: "2024-02-16T10:00:00",
+              end: "2024-02-16T14:00:00",
+              color: "#7bd148",
+            },
+            {
+              title: "Client Negotiation",
+              start: "2024-02-19T13:00:00",
+              end: "2024-02-19T15:30:00",
+              color: "#f83a22",
+            },
+            {
+              title: "Team Lunch",
+              start: "2024-02-23T12:30:00",
+              end: "2024-02-23T13:30:00",
+              color: "#f3b343",
+            },
+            {
+              title: "Quarterly Review",
+              start: "2024-02-26T09:00:00",
+              end: "2024-02-26T11:00:00",
+              color: "#a4bdfc",
+            },
+            {
+              title: "Hackathon",
+              start: "2024-02-04T14:00:00",
+              end: "2024-02-04T18:00:00",
+              color: "#3788d8",
+            },
+            {
+              title: "Press Conference",
+              start: "2024-02-07T11:00:00",
+              end: "2024-02-07T12:30:00",
+              color: "#7bd148",
+            },
+            {
+              title: "Company Anniversary",
+              start: "2024-02-14",
+              end: "2024-02-14",
+              color: "#f83a22",
+            },
+            {
+              title: "Networking Event",
+              start: "2024-02-21T15:00:00",
+              end: "2024-02-21T18:00:00",
+              color: "#f3b343",
+            },
+            {
+              title: "Client Follow-up",
+              start: "2024-02-24T10:30:00",
+              end: "2024-02-24T12:00:00",
+              color: "#a4bdfc",
+            },
+          ],
+        });
+
+        calendar.render();
+
+        // Check window width on resize
+        $(window).on("resize", function () {
+          checkWindowSize();
+        });
+
+        // Initial check on document ready
+        checkWindowSize();
+
+        // Function to check window width and switch view
+        function checkWindowSize() {
+          var windowWidth = $(window).width();
+          // Change view to 'listMonth' if window width is less than 600px
+          if (windowWidth < 768) {
+            calendar.changeView("listMonth");
+          } else {
+            // Change back to 'dayGridMonth' if the window width is 600px or more
+            calendar.changeView("dayGridMonth");
+          }
+        }
+      });
+    </script>
+    <!-- Fullcalendar End -->
+
+    <!-- Toggle Filter -->
+    <script>
+      $("#location-filter").click(function () {
+        $(this).children("i").toggleClass("fa-chevron-down fa-chevron-up");
+      });
+      $("#gender-filter").click(function () {
+        $(this).children("i").toggleClass("fa-chevron-down fa-chevron-up");
+      });
+      $("#age-filter").click(function () {
+        $(this).children("i").toggleClass("fa-chevron-down fa-chevron-up");
+      });
+      $("#interest-filter").click(function () {
+        $(this).children("i").toggleClass("fa-chevron-down fa-chevron-up");
+      });
+    </script>
+  </body>
+</html>
