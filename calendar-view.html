@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Template DHQ</title>
+    <!-- Fontawesome Start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawesome End -->
+
     <!-- Bootstrap CSS Start -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -38,24 +47,322 @@
     <!-- Select2 End -->
 
     <!-- Custom CSS Start -->
-    <link href="style.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
     <!-- Custom CSS End -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
+    <div class="overlay"></div>
     <section class="bg-gradiant bg-app">
+      <nav class="sidebar">
+        <div class="sidebar-wrapper">
+          <div class="shrink-icon-sidebar dismiss">
+            <i class="fa-solid fa-angles-left"></i>
+          </div>
+          <div class="p-4">
+            <div class="p-3 shadow-sm mb-4" style="border-radius: 20px">
+              <div
+                id="location-filter"
+                class="d-flex justify-content-between"
+                data-bs-toggle="collapse"
+                href="#location"
+                role="button"
+                aria-expanded="false"
+                aria-controls="location"
+              >
+                <p class="mb-0" style="font-weight: 500">Location</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="collapse multi-collapse mt-2" id="location">
+                <div>
+                  <select
+                    class="location-select"
+                    name="states[]"
+                    multiple="multiple"
+                  >
+                    <option value="Nanggroe Aceh Darussalam">
+                      Nanggroe Aceh Darussalam
+                    </option>
+                    <option value="Sumatera Utara">Sumatera Utara</option>
+                    <option value="Sumatera Selatan">Sumatera Selatan</option>
+                    <option value="Sumatera Barat">Sumatera Barat</option>
+                    <option value="Bengkulu">Bengkulu</option>
+                    <option value="Riau">Riau</option>
+                    <option value="Kepulauan Riau">Kepulauan Riau</option>
+                    <option value="Jambi">Jambi</option>
+                    <option value="Lampung">Lampung</option>
+                    <option value="Bangka Belitung">Bangka Belitung</option>
+                    <option value="Kalimantan Barat">Kalimantan Barat</option>
+                    <option value="Kalimantan Selatan">
+                      Kalimantan Selatan
+                    </option>
+                    <option value="Kalimantan Timur">Kalimantan Timur</option>
+                    <option value="Kalimantan Utara">Kalimantan Utara</option>
+                    <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                    <option value="Banten">Banten</option>
+                    <option value="DKI Jakarta">DKI Jakarta</option>
+                    <option value="Jawa Barat">Jawa Barat</option>
+                    <option value="Daerah Istimewa Yogyakarta">
+                      Daerah Istimewa Yogyakarta
+                    </option>
+                    <option value="Jawa Timur">Jawa Timur</option>
+                    <option value="Jawa Tengah">Jawa Tengah</option>
+                    <option value="Bali">Bali</option>
+                    <option value="Nusa Tenggara Barat">
+                      Nusa Tenggara Barat
+                    </option>
+                    <option value="Nusa Tenggara Timur">
+                      Nusa Tenggara Timur
+                    </option>
+                    <option value="Gorontalo">Gorontalo</option>
+                    <option value="Sulawesi Utara">Sulawesi Utara</option>
+                    <option value="Sulawesi Barat">Sulawesi Barat</option>
+                    <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                    <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                    <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                    <option value="Maluku">Maluku</option>
+                    <option value="Maluku Utara">Maluku Utara</option>
+                    <option value="Papua">Papua</option>
+                    <option value="Papua Barat">Papua Barat</option>
+                    <option value="Papua Tengah">Papua Tengah</option>
+                    <option value="Papua Pegunungan">Papua Pegunungan</option>
+                    <option value="Papua Selatan">Papua Selatan</option>
+                    <option value="Papua Barat Daya">Papua Barat Daya</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 shadow-sm mb-4" style="border-radius: 20px">
+              <div
+                id="gender-filter"
+                class="d-flex justify-content-between"
+                data-bs-toggle="collapse"
+                href="#gender"
+                role="button"
+                aria-expanded="false"
+                aria-controls="gender"
+              >
+                <p class="mb-0" style="font-weight: 500">
+                  Target Audience (Gender)
+                </p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="collapse multi-collapse mt-2" id="gender">
+                <div>
+                  <ul class="ks-cboxtags">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="gender"
+                        id="Male"
+                        value="Male"
+                      /><label for="Male">Male</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="gender"
+                        id="Female"
+                        value="Female"
+                      /><label for="Female">Female</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="gender"
+                        id="MaleFemale"
+                        value="Male & Female"
+                      /><label for="MaleFemale">Male & Female</label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 shadow-sm mb-4" style="border-radius: 20px">
+              <div
+                id="age-filter"
+                class="d-flex justify-content-between"
+                data-bs-toggle="collapse"
+                href="#age"
+                role="button"
+                aria-expanded="false"
+                aria-controls="age"
+              >
+                <p class="mb-0" style="font-weight: 500">
+                  Target Audience (Age)
+                </p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="collapse multi-collapse mt-2" id="age">
+                <div>
+                  <ul class="ks-cboxtags">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="age"
+                        id="5-9"
+                        value="5-9 Year"
+                      /><label for="5-9">5-9 Year</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="age"
+                        id="10-19"
+                        value="10-19 Year"
+                      /><label for="10-19">10-19 Year</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="age"
+                        id="20-29"
+                        value="20-29 Year"
+                      /><label for="20-29">20-29 Year</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="age"
+                        id="30-39"
+                        value="30-39 Year"
+                      /><label for="30-39">30-39 Year</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="age"
+                        id="40+"
+                        value="40+ Year"
+                      /><label for="40+">40+ Year</label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 shadow-sm mb-4" style="border-radius: 20px">
+              <div
+                id="interest-filter"
+                class="d-flex justify-content-between"
+                data-bs-toggle="collapse"
+                href="#interest"
+                role="button"
+                aria-expanded="false"
+                aria-controls="interest"
+              >
+                <p class="mb-0" style="font-weight: 500">Interest</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="collapse multi-collapse mt-2" id="interest">
+                <div>
+                  <ul class="ks-cboxtags">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="Automotive"
+                        value="Automotive"
+                      /><label for="Automotive">Automotive</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="Entertainment"
+                        value="Entertainment"
+                      /><label for="Entertainment">Entertainment</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="Sport"
+                        value="Sport"
+                      /><label for="Sport">Sport</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="Adventure"
+                        value="Advanture"
+                      /><label for="Adventure">Advanture</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="Education"
+                        value="Education"
+                      /><label for="Education">Education</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="Lifestyle"
+                        value="Lifestyle"
+                      /><label for="Lifestyle">Lifestyle</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="FloraFauna"
+                        value="Flora & Fauna"
+                      /><label for="FloraFauna">Flora & Fauna</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="ArtCulture"
+                        value="Art & Culture"
+                      /><label for="ArtCulture">Art & Culture</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="FoodTravel"
+                        value="Food & Travel"
+                      /><label for="FoodTravel">Food & Travel</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="Social"
+                        value="Social"
+                      /><label for="Social">Social</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="interest"
+                        id="BusinessSMEs"
+                        value="Business & SMEs"
+                      /><label for="BusinessSMEs">Business & SMEs</label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
       <div class="box-section bg-light mx-auto">
         <div
-          class="expand-icon-sidebar d-block d-sm-block d-md-block d-lg-none"
+          class="expand-icon-sidebar open-menu d-block d-sm-block d-md-block d-lg-none"
         >
-          <i class="fa-solid fa-angles-right"></i>
+          <i class="fa-solid fa-bars"></i>
         </div>
         <div class="header">
           <div class="row">
-            <div class="col-12 col-md-3">
-              <h1 class="mb-0 title">CoE</h1>
-              <p class="mb-0 sub-title">Calendar of Event</p>
+            <div class="col-12 col-md-3 text-center">
+              <img class="logo-app" src="assets/images/logo.png" alt="" />
+              <h4 class="mt-2 mb-0 title">Calendar of Event</h4>
             </div>
             <div
               class="col-12 col-md-9 d-flex gap-3 align-items-center header-tools"
@@ -412,8 +719,10 @@
               </div>
             </div>
             <div class="col-12 col-lg-9">
-              <div class="d-flex justify-content-between mb-3">
-                <h3 class="mb-0">All Events</h3>
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h5 class="mb-0 sub-title">All Events</h5>
                 <div class="btn-group">
                   <button
                     type="button"
@@ -528,6 +837,8 @@
       });
     </script>
     <!-- Interest Filter End -->
+
+    <script src="assets/js/script.js"></script>
 
     <!-- Fullcalendar Start -->
     <script>

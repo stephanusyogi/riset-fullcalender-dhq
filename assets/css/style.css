@@ -1,5 +1,10 @@
 @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
-
+:root {
+  --blue-color: #2b2f5f;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
 .bg-gradiant {
   background: rgb(128, 230, 218);
   background: linear-gradient(
@@ -10,9 +15,10 @@
   );
 }
 .bg-app {
+  display: block;
   padding: 25px 100px;
 }
-@media screen and (max-width: 601px) {
+@media screen and (max-width: 991px) {
   .header-tools {
     flex-wrap: wrap;
   }
@@ -22,17 +28,29 @@
   #calendar {
     height: 100vh;
   }
+  .header-tools {
+    justify-content: center;
+  }
 }
 @media screen and (max-width: 601px) {
   .bg-app {
     padding: 10px;
   }
 }
+
 .box-section {
   padding: 25px 50px;
   border-radius: 2rem;
   width: 90%;
   position: relative;
+}
+@media screen and (max-width: 426px) {
+  .box-section {
+    padding: 0;
+    border-radius: 2rem;
+    width: 100%;
+    position: relative;
+  }
 }
 .expand-icon-sidebar {
   position: absolute;
@@ -58,15 +76,68 @@
   .sub-title {
     text-align: center;
   }
-  .header-tools {
-    justify-content: center;
-  }
+}
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(51, 51, 51, 0.7);
+  z-index: 997;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+}
+.sidebar {
+  width: 270px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -999px;
+  z-index: 999;
+  background: #fff;
+  color: #000;
+  transition: all 0.3s;
+  /* box-shadow: 3px 3px 3px rgba(27, 162, 167, 0.5); */
+  text-align: left;
+}
+.sidebar.active {
+  left: 0;
+}
+.sidebar-wrapper {
+  position: relative;
+}
+.shrink-icon-sidebar {
+  /* box-shadow: 1px 4px 9px 0px rgba(27, 162, 167, 0.5); */
+  position: absolute;
+  top: 50px;
+  left: -200px;
+  z-index: 999;
+  background-color: #fff;
+  padding: 15px 10px;
+  color: #000;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.shrink-icon-sidebar.active {
+  left: 260px !important;
 }
 .title {
-  font-size: 4rem;
+  /* font-size: 1.5rem; */
+  font-weight: 600;
+  color: var(--blue-color);
+}
+.logo-app {
+  width: 50%;
 }
 .sub-title {
-  font-size: 1rem;
+  /* font-size: 1.3rem; */
+  font-weight: 600;
+  color: var(--blue-color);
 }
 .cart {
   position: relative;
