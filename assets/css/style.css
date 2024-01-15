@@ -498,3 +498,16 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   width: 100%;
   height: min-content;
 }
+.carousel-item .thumb {
+  width: 20%;
+  cursor: pointer;
+  float: left;
+  margin: 5px;
+}
+.carousel-item .thumb img {
+  width: 100%;
+}
+.carousel-item img {
+  width: 100%;
+}
+/* .carousel-item.active; */
