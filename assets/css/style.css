@@ -52,6 +52,30 @@ body {
     position: relative;
   }
 }
+.scroll-to-top {
+  position: fixed;
+  padding: 5px 10px;
+  background-color: var(--blue-color);
+  z-index: 996;
+  color: #fff;
+  border-radius: 10px;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.scroll-to-top:hover {
+  cursor: pointer;
+  background-color: #114cd6;
+}
+.scroll-to-top:active {
+  background-color: #11119c;
+}
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
 .expand-icon-sidebar {
   position: absolute;
   top: 50px;
@@ -141,7 +165,7 @@ body {
 }
 .cart {
   position: relative;
-  background-color: #0ec2da;
+  background-color: var(--blue-color);
   border-radius: 100%;
   width: max-content;
   height: max-content;
@@ -154,14 +178,14 @@ body {
   top: -12px;
   right: -12px;
   font-size: 12px;
-  background-color: #58918c;
+  background-color: var(--blue-color);
   border-radius: 100%;
   width: max-content;
   height: max-content;
   padding: 5px 8px;
 }
 .profile {
-  background-color: #0ec2da;
+  background-color: var(--blue-color);
   border-radius: 100%;
   width: max-content;
   height: max-content;
@@ -309,7 +333,7 @@ body {
   transition: all 0.2s ease;
 }
 .tgl-light:checked + .tgl-btn {
-  background: #0ec2da;
+  background: var(--blue-color);
 }
 .calendar-label {
   font-size: 8px;
@@ -395,6 +419,13 @@ ul.ks-cboxtags li input[type="checkbox"] {
 ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   border: 2px solid #d0d0d0;
 }
+.btn-secondary {
+  background-color: var(--blue-color) !important;
+  border-color: var(--blue-color) !important;
+}
+.btn-secondary:focus {
+  box-shadow: 0px 0px 3px 1px grey !important;
+}
 
 .select2 {
   margin-top: 10px;
@@ -411,4 +442,59 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   .select2-selection__choice__display {
   padding-left: 8px !important;
   padding-right: 5px !important;
+}
+@media screen and (max-width: 768px) {
+  .header-pagination {
+    text-align: center;
+  }
+  .pagination {
+    justify-content: center !important;
+  }
+}
+.pagination {
+  font-size: small !important;
+}
+.page-link {
+  padding: 0.2rem 0.4rem !important;
+  color: #000 !important;
+}
+.page-item.active .page-link {
+  background-color: var(--blue-color) !important;
+  border-color: var(--blue-color) !important;
+  color: #fff !important;
+}
+.page-item .page-link:focus {
+  box-shadow: 0px 0px 3px 1px grey !important;
+}
+.date-divider {
+  border-top: 1px solid #ccc;
+  width: 100%;
+}
+.event-list {
+  padding: 15px 0;
+}
+.event-list-item {
+  margin-bottom: 20px;
+}
+.desc-section h3 {
+  font-weight: 700;
+  color: var(--blue-color);
+  margin-bottom: 0;
+}
+.desc-section .event-status {
+  font-size: 14px;
+}
+.desc-section .excerpt {
+  font-size: 12px;
+  text-align: justify;
+}
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-section img {
+  border-radius: 10px;
+  width: 100%;
+  height: min-content;
 }

@@ -70,7 +70,6 @@
           <div class="p-4">
             <div class="p-3 shadow-sm mb-4" style="border-radius: 10px">
               <div
-                id="location-filter"
                 class="d-flex justify-content-between"
                 data-bs-toggle="collapse"
                 href="#location"
@@ -168,7 +167,6 @@
             </div>
             <div class="p-3 shadow-sm mb-4" style="border-radius: 10px">
               <div
-                id="gender-filter"
                 class="d-flex justify-content-between"
                 data-bs-toggle="collapse"
                 href="#gender"
@@ -214,7 +212,6 @@
             </div>
             <div class="p-3 shadow-sm mb-4" style="border-radius: 10px">
               <div
-                id="age-filter"
                 class="d-flex justify-content-between"
                 data-bs-toggle="collapse"
                 href="#age"
@@ -276,7 +273,6 @@
             </div>
             <div class="p-3 shadow-sm mb-4" style="border-radius: 10px">
               <div
-                id="interest-filter"
                 class="d-flex justify-content-between"
                 data-bs-toggle="collapse"
                 href="#interest"
@@ -424,12 +420,7 @@
               </div>
               <div class="switch-mode">
                 <div class="tgl-group">
-                  <input
-                    class="tgl tgl-light"
-                    id="view-mode"
-                    type="checkbox"
-                    checked="true"
-                  />
+                  <input class="tgl tgl-light" id="view-mode" type="checkbox" />
                   <label class="tgl-btn" for="view-mode"></label>
                   <p
                     id="view-mode-label"
@@ -467,7 +458,6 @@
             <div class="d-none d-sm-none d-md-none d-lg-block col-12 col-lg-3">
               <div class="p-3 shadow-sm mb-4" style="border-radius: 10px">
                 <div
-                  id="location-filter"
                   class="d-flex justify-content-between"
                   data-bs-toggle="collapse"
                   href="#location"
@@ -543,7 +533,6 @@
               </div>
               <div class="p-3 shadow-sm mb-4" style="border-radius: 10px">
                 <div
-                  id="event-date-range-filter"
                   class="d-flex justify-content-between"
                   data-bs-toggle="collapse"
                   href="#event-date-range"
@@ -570,7 +559,6 @@
               </div>
               <div class="p-3 shadow-sm mb-4" style="border-radius: 10px">
                 <div
-                  id="gender-filter"
                   class="d-flex justify-content-between"
                   data-bs-toggle="collapse"
                   href="#gender"
@@ -616,7 +604,6 @@
               </div>
               <div class="p-3 shadow-sm mb-4" style="border-radius: 10px">
                 <div
-                  id="age-filter"
                   class="d-flex justify-content-between"
                   data-bs-toggle="collapse"
                   href="#age"
@@ -678,7 +665,6 @@
               </div>
               <div class="p-3 shadow-sm mb-4" style="border-radius: 10px">
                 <div
-                  id="interest-filter"
                   class="d-flex justify-content-between"
                   data-bs-toggle="collapse"
                   href="#interest"
@@ -818,7 +804,176 @@
                   </ul>
                 </div>
               </div>
-              <div id="calendar"></div>
+              <div>
+                <div class="row">
+                  <div
+                    class="col-12 col-sm-12 col-md-6 col-lg-6 header-pagination"
+                  >
+                    <small>Showing 1 to 10 of 30 Entries</small>
+                  </div>
+                  <div
+                    class="col-12 col-sm-12 col-md-6 col-lg-6 header-pagination"
+                  >
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination justify-content-end">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item active">
+                          <a class="page-link" href="#">5</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">6</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">7</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">8</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">9</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <p class="mb-0 fw-medium">
+                    15 Januari 2024 - 15 Februari 2024
+                  </p>
+                  <div class="date-divider"></div>
+                </div>
+                <div class="event-list">
+                  <div class="row event-list-item">
+                    <div
+                      class="col-lg-2 d-none d-sm-none d-md-none d-lg-block text-center date-section"
+                    >
+                      <small>SAT</small>
+                      <h3>7</h3>
+                    </div>
+                    <div class="col-lg-5 desc-section">
+                      <small>September 7 @ 10am - 12pm</small>
+                      <h3>Meeting with Client</h3>
+                      <p class="event-status">
+                        <span><i class="fa-solid fa-satellite-dish"></i></span>
+                        Online Event
+                      </p>
+                      <p class="excerpt">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eos, saepe voluptatum? Recusandae et reiciendis veniam
+                        odio voluptate repellat eveniet quaerat, deleniti quia
+                        maiores cupiditate velit sunt voluptatem...
+                      </p>
+                    </div>
+                    <div class="col-lg-5 image-section">
+                      <img
+                        src="https://source.unsplash.com/random/300x200/?office+people=1"
+                      />
+                    </div>
+                  </div>
+                  <div class="row event-list-item">
+                    <div
+                      class="col-lg-2 d-none d-sm-none d-md-none d-lg-block text-center date-section"
+                    >
+                      <small>SUN</small>
+                      <h3>8</h3>
+                    </div>
+                    <div class="col-lg-5 desc-section">
+                      <small>September 7 @ 10am - 12pm</small>
+                      <h3>Lunch Break</h3>
+                      <p class="event-status">
+                        <span><i class="fa-solid fa-people-group"></i></span>
+                        Offline Event
+                      </p>
+                      <p class="excerpt">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eos, saepe voluptatum? Recusandae et reiciendis veniam
+                        odio voluptate repellat eveniet quaerat, deleniti quia
+                        maiores cupiditate velit sunt voluptatem...
+                      </p>
+                    </div>
+                    <div class="col-lg-5 image-section">
+                      <img
+                        src="https://source.unsplash.com/random/300x200/?office+people=2"
+                      />
+                    </div>
+                  </div>
+                  <div class="row event-list-item">
+                    <div
+                      class="col-lg-2 d-none d-sm-none d-md-none d-lg-block text-center date-section"
+                    >
+                      <small>MON</small>
+                      <h3>9</h3>
+                    </div>
+                    <div class="col-lg-5 desc-section">
+                      <small>September 9 @ 10am - 12pm</small>
+                      <h3>Team Brainstorming</h3>
+                      <p class="event-status">
+                        <span><i class="fa-solid fa-people-group"></i></span>
+                        Offline Event
+                      </p>
+                      <p class="excerpt">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eos, saepe voluptatum? Recusandae et reiciendis veniam
+                        odio voluptate repellat eveniet quaerat, deleniti quia
+                        maiores cupiditate velit sunt voluptatem...
+                      </p>
+                    </div>
+                    <div class="col-lg-5 image-section">
+                      <img
+                        src="https://source.unsplash.com/random/300x200/?office+people=3"
+                      />
+                    </div>
+                  </div>
+                  <div class="row event-list-item">
+                    <div
+                      class="col-lg-2 d-none d-sm-none d-md-none d-lg-block text-center date-section"
+                    >
+                      <small>TUE</small>
+                      <h3>10</h3>
+                    </div>
+                    <div class="col-lg-5 desc-section">
+                      <small>September 10 @ 10am - 12pm</small>
+                      <h3>Product Presentation</h3>
+                      <p class="event-status">
+                        <span><i class="fa-solid fa-satellite-dish"></i></span>
+                        Online Event
+                      </p>
+                      <p class="excerpt">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eos, saepe voluptatum? Recusandae et reiciendis veniam
+                        odio voluptate repellat eveniet quaerat, deleniti quia
+                        maiores cupiditate velit sunt voluptatem...
+                      </p>
+                    </div>
+                    <div class="col-lg-5 image-section">
+                      <img
+                        src="https://source.unsplash.com/random/300x200/?office+people=4"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </main>
@@ -827,11 +982,6 @@
 
     <!-- Dummy Events -->
     <script src="events.js"></script>
-
-    <!-- Full Calendar JS Start -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap5@6.1.10/index.global.js"></script>
-    <!-- Full Calendar JS End -->
 
     <!-- Bootstrap Start -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -958,49 +1108,12 @@
 
     <script src="assets/js/script.js"></script>
 
-    <!-- Fullcalendar Start -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var calendarEl = document.getElementById("calendar");
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: "dayGridMonth",
-          themeSystem: "bootstrap5",
-          headerToolbar: {
-            left: "prev,next today title",
-            right: "dayGridMonth,listMonth",
-          },
-          dayMaxEvents: true, // allow "more" link when too many events
-          events: events,
-        });
-
-        calendar.render();
-
-        // Check window width on resize
-        $(window).on("resize", function () {
-          checkWindowSize();
-        });
-
-        // Initial check on document ready
-        checkWindowSize();
-
-        // Function to check window width and switch view
-        function checkWindowSize() {
-          var windowWidth = $(window).width();
-          // Change view to 'listMonth' if window width is less than 600px
-          if (windowWidth < 768) {
-            calendar.changeView("listMonth");
-          } else {
-            // Change back to 'dayGridMonth' if the window width is 600px or more
-            calendar.changeView("dayGridMonth");
-          }
-        }
-      });
-    </script>
-    <!-- Fullcalendar End -->
-
     <script>
       $(document).ready(function () {
         // Listen for checkbox change event
+        $("#view-mode").prop("checked")
+          ? $("#view-mode-label").text("Calendar Mode")
+          : $("#view-mode-label").text("List Mode");
         $("#view-mode").change(function () {
           // Get the checkbox state
           var isChecked = $(this).prop("checked");
@@ -1011,22 +1124,5 @@
     </script>
 
     <!-- Toggle Filter -->
-    <script>
-      $("#location-filter").click(function () {
-        $(this).children("i").toggleClass("fa-chevron-down fa-chevron-up");
-      });
-      $("#event-date-range-filter").click(function () {
-        $(this).children("i").toggleClass("fa-chevron-down fa-chevron-up");
-      });
-      $("#gender-filter").click(function () {
-        $(this).children("i").toggleClass("fa-chevron-down fa-chevron-up");
-      });
-      $("#age-filter").click(function () {
-        $(this).children("i").toggleClass("fa-chevron-down fa-chevron-up");
-      });
-      $("#interest-filter").click(function () {
-        $(this).children("i").toggleClass("fa-chevron-down fa-chevron-up");
-      });
-    </script>
   </body>
 </html>
