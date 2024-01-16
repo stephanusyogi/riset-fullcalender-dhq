@@ -587,3 +587,129 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 .summary-section .bottom-booking-desc {
   font-size: 8px;
 }
+.sign-section {
+  padding: 10px 20px;
+}
+.jumbotron-section {
+  margin: 10rem 0;
+}
+@media screen and (max-width: 1401px) {
+  .jumbotron-section {
+    margin: 5rem 0;
+  }
+}
+@media screen and (max-width: 1201px) {
+  .jumbotron-section {
+    margin: 3rem 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  .jumbotron-section {
+    margin: 0.5rem 0;
+  }
+}
+@media screen and (max-width: 427px) {
+  .sign-section {
+    padding: 10px;
+  }
+}
+.sub-section .jumbotron-sub-title {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+.sub-section .jumbotron-title {
+  font-size: 5rem;
+}
+.sign-box {
+  width: 60%;
+  margin: 2rem auto;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+@media screen and (max-width: 427px) {
+  .sign-box {
+    width: 100%;
+    margin: 2rem auto;
+    padding: 20px;
+  }
+}
+.sign-box > .logo img {
+  width: 30%;
+}
+
+.form-sign .form-group {
+  margin-bottom: 10px;
+}
+.form-sign label {
+  font-weight: normal;
+  font-size: 13px;
+}
+.form-sign .form-control {
+  min-height: 38px;
+  padding-left: 5px;
+  box-shadow: none !important;
+  border-width: 0 0 1px 0;
+  border-radius: 0;
+}
+.form-sign .form-control:focus {
+  border-color: #ccc;
+}
+.form-sign .input-group-addon {
+  max-width: 42px;
+  text-align: center;
+  background: none;
+  border-bottom: 1px solid #ced4da;
+  padding-right: 5px;
+  border-radius: 0;
+}
+.form-sign .btn,
+.form-sign .btn:active {
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  min-width: 140px;
+}
+.form-sign .btn:hover,
+.form-sign .btn:focus {
+  background: #2926be !important;
+}
+.form-sign .hint-text {
+  text-align: center;
+  padding-top: 5px;
+  font-size: 13px;
+}
+.form-sign .not-member {
+  color: #999;
+  border-color: #dee4e7;
+  text-align: center;
+  margin: 0 -25px -25px;
+  font-size: 13px;
+  justify-content: center;
+}
+.form-sign a {
+  color: #fff;
+  text-decoration: underline;
+}
+.form-sign a:hover {
+  text-decoration: none;
+}
+.form-sign a {
+  color: var(--blue-color);
+  text-decoration: none;
+}
+.form-sign a:hover {
+  text-decoration: underline;
+}
+.form-sign .fa {
+  font-size: 21px;
+  position: relative;
+  top: 6px;
+  color: var(--blue-color);
+}
+.sign-box .copyright {
+  font-size: 13px;
+}
