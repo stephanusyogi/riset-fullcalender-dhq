@@ -547,3 +547,43 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   padding-bottom: 0;
   color: #fff !important;
 }
+
+@media screen and (max-width: 991px) {
+  .cart-list-item {
+    justify-content: center;
+  }
+}
+.cart-list-item > .delete-item {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.cart-list-item > .delete-item a {
+  color: rgb(239, 29, 29);
+}
+.cart-list-item > .image-item img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+.summary-section {
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 1px grey !important;
+  text-align: center;
+}
+.summary-section h3 {
+  font-weight: 600;
+}
+.summary-section h5 {
+  font-weight: 600;
+}
+.summary-section .btn-book i {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  color: var(--blue-color);
+  margin-right: 10px;
+}
+.summary-section .bottom-booking-desc {
+  font-size: 8px;
+}
