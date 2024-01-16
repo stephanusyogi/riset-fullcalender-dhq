@@ -341,6 +341,9 @@ body {
 .search-bar {
   width: 100% !important;
 }
+.search-bar i {
+  color: var(--blue-color) !important;
+}
 .form-control:focus {
   box-shadow: none;
 }
