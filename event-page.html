@@ -53,6 +53,10 @@
     />
     <!-- Select2 End -->
 
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css" />
+    <!-- Magnific Popup -->
+
     <!-- Custom CSS Start -->
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- Custom CSS End -->
@@ -120,40 +124,64 @@
                 <div id="carousel" class="carousel slide">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img
-                        class="rounded"
-                        src="https://source.unsplash.com/random/300x200/?office+people=1"
-                      />
+                      <a
+                        class="pop-up-image"
+                        href="https://source.unsplash.com/random/?office+people=1"
+                      >
+                        <img
+                          class="rounded"
+                          src="https://source.unsplash.com/random/?office+people=1"
+                      /></a>
                     </div>
                     <div class="carousel-item">
-                      <img
-                        class="rounded"
-                        src="https://source.unsplash.com/random/300x200/?office+people=2"
-                      />
+                      <a
+                        class="pop-up-image"
+                        href="https://source.unsplash.com/random/?office+people=2"
+                      >
+                        <img
+                          class="rounded"
+                          src="https://source.unsplash.com/random/?office+people=2"
+                      /></a>
                     </div>
                     <div class="carousel-item">
-                      <img
-                        class="rounded"
-                        src="https://source.unsplash.com/random/300x200/?office+people=3"
-                      />
+                      <a
+                        class="pop-up-image"
+                        href="https://source.unsplash.com/random/?office+people=3"
+                      >
+                        <img
+                          class="rounded"
+                          src="https://source.unsplash.com/random/?office+people=3"
+                      /></a>
                     </div>
                     <div class="carousel-item">
-                      <img
-                        class="rounded"
-                        src="https://source.unsplash.com/random/300x200/?office+people=4"
-                      />
+                      <a
+                        class="pop-up-image"
+                        href="https://source.unsplash.com/random/?office+people=4"
+                      >
+                        <img
+                          class="rounded"
+                          src="https://source.unsplash.com/random/?office+people=4"
+                      /></a>
                     </div>
                     <div class="carousel-item">
-                      <img
-                        class="rounded"
-                        src="https://source.unsplash.com/random/300x200/?office+people=5"
-                      />
+                      <a
+                        class="pop-up-image"
+                        href="https://source.unsplash.com/random/?office+people=5"
+                      >
+                        <img
+                          class="rounded"
+                          src="https://source.unsplash.com/random/?office+people=5"
+                      /></a>
                     </div>
                     <div class="carousel-item">
-                      <img
-                        class="rounded"
-                        src="https://source.unsplash.com/random/300x200/?office+people=6"
-                      />
+                      <a
+                        class="pop-up-image"
+                        href="https://source.unsplash.com/random/?office+people=6"
+                      >
+                        <img
+                          class="rounded"
+                          src="https://source.unsplash.com/random/?office+people=6"
+                      /></a>
                     </div>
                   </div>
                 </div>
@@ -173,7 +201,7 @@
                           >
                             <img
                               class="rounded"
-                              src="https://source.unsplash.com/random/300x200/?office+people=1"
+                              src="https://source.unsplash.com/random/?office+people=1"
                             />
                           </div>
                           <div
@@ -183,7 +211,7 @@
                           >
                             <img
                               class="rounded"
-                              src="https://source.unsplash.com/random/300x200/?office+people=2"
+                              src="https://source.unsplash.com/random/?office+people=2"
                             />
                           </div>
                           <div
@@ -193,7 +221,7 @@
                           >
                             <img
                               class="rounded"
-                              src="https://source.unsplash.com/random/300x200/?office+people=3"
+                              src="https://source.unsplash.com/random/?office+people=3"
                             />
                           </div>
                         </div>
@@ -208,7 +236,7 @@
                           >
                             <img
                               class="rounded"
-                              src="https://source.unsplash.com/random/300x200/?office+people=4"
+                              src="https://source.unsplash.com/random/?office+people=4"
                             />
                           </div>
                           <div
@@ -218,7 +246,7 @@
                           >
                             <img
                               class="rounded"
-                              src="https://source.unsplash.com/random/300x200/?office+people=5"
+                              src="https://source.unsplash.com/random/?office+people=5"
                             />
                           </div>
                           <div
@@ -228,7 +256,7 @@
                           >
                             <img
                               class="rounded"
-                              src="https://source.unsplash.com/random/300x200/?office+people=6"
+                              src="https://source.unsplash.com/random/?office+people=6"
                             />
                           </div>
                         </div>
@@ -358,6 +386,35 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.js"></script>
     <!-- Bootstrap End -->
+
+    <!-- Magnific Popup -->
+    <script src="plugins/magnific-popup/jquery.magnific-popup.js"></script>
+    <script>
+      $(".pop-up-image").magnificPopup({
+        type: "image",
+        // other options
+        mainClass: "mfp-with-zoom", // this class is for CSS animation below
+
+        zoom: {
+          enabled: true, // By default it's false, so don't forget to enable it
+
+          duration: 300, // duration of the effect, in milliseconds
+          easing: "ease-in-out", // CSS transition easing function
+
+          // The "opener" function should return the element from which popup will be zoomed in
+          // and to which popup will be scaled down
+          // By defailt it looks for an image tag:
+          opener: function (openerElement) {
+            // openerElement is the element on which popup was initialized, in this case its <a> tag
+            // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+            return openerElement.is("img")
+              ? openerElement
+              : openerElement.find("img");
+          },
+        },
+      });
+    </script>
+    <!-- Magnific Popup -->
 
     <script>
       var btnScrollToTop = $(".scroll-to-top");
